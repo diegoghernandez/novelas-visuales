@@ -1,0 +1,12 @@
+.historias-container {
+	display: grid;
+	column-gap: 32px;
+	row-gap: 32px;
+	padding: 16px;
+	place-content: center;
+	grid-template-columns: repeat(auto-fill, minmax(320px, auto));
+
+	& img {
+		aspect-ratio: 3 / 2;
+	}
+}

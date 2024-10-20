@@ -1,0 +1,8 @@
+.carta {
+	display: grid;
+	place-items: start;
+	gap: 16px;
+	padding: 24px;
+	border-radius: 16px;
+	outline: 1px solid gray;
+}

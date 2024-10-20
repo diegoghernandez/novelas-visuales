@@ -1,15 +1,15 @@
 import { Navbar } from "@/Components/common/Navbar";
-import { HistoriasContainer } from "@/Components/inicio/HistoriasContainer";
+import { ContenedorNovelas } from "@/Components/inicio/ContenedorNovelas";
 import { Head } from "@inertiajs/react";
 
-export default function Inicio({ historias }) {
+export default function Inicio({ novelas }) {
 	return (
 		<>
 			<Head title="Novelas" />
 			<Navbar />
 			<main>
-				<h1>Historias</h1>
-				<HistoriasContainer historias={historias} />
+				<h1>Novelas</h1>
+				<ContenedorNovelas novelas={novelas} />
 			</main>
 		</>
 	);
