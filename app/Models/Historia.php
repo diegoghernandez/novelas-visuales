@@ -16,6 +16,6 @@ class Historia extends Model
     protected $fillable = [
         'titulo',
         'descripcion',
-        'ímagen'
+        'imagen'
     ];
 }

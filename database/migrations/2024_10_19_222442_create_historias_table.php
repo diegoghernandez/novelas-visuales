@@ -15,7 +15,7 @@ return new class extends Migration
             $table->ulid('id');
             $table->string('titulo');
             $table->string('descripcion');
-            $table->string('ímagen');
+            $table->string('imagen');
             $table->timestamps();
         });
     }

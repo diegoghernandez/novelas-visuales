@@ -17,9 +17,9 @@ class HistoriaFactory extends Factory
     public function definition(): array
     {
         return [
-            'titulo' => fake()->title(),
+            'titulo' => fake()->userName(),
             'descripcion' => fake()->realText(),
-            'ímagen' => fake()->imageUrl()
+            'imagen' => fake()->imageUrl()
         ];
     }
 }
