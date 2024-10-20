@@ -2,11 +2,11 @@ import { Navbar } from "@/Components/common/Navbar";
 import { ContenedorNovelas } from "@/Components/inicio/ContenedorNovelas";
 import { Head } from "@inertiajs/react";
 
-export default function Inicio({ novelas }) {
+export default function Inicio({ auth, novelas }) {
 	return (
 		<>
 			<Head title="Novelas" />
-			<Navbar />
+			<Navbar user={auth.user} />
 			<main>
 				<h1>Novelas</h1>
 				<ContenedorNovelas novelas={novelas} />
