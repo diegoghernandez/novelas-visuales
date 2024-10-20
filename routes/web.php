@@ -1,11 +1,18 @@
 <?php
 
+use App\Http\Controllers\HistoriaController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Historia;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
+
+Route::controller(HistoriaController::class)->group(function () {
+    Route::get('/', 'show');
+});
+
+Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
