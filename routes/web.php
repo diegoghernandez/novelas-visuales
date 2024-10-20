@@ -1,14 +1,13 @@
 <?php
 
-use App\Http\Controllers\HistoriaController;
+use App\Http\Controllers\NovelaController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Historia;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 
-Route::controller(HistoriaController::class)->group(function () {
+Route::controller(NovelaController::class)->group(function () {
     Route::get('/', 'show');
 });
 

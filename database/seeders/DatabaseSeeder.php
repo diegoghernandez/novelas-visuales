@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'password' => '1234'
         ]);
 
-        $this->call([HistoriaSeeder::class, EscenaSeeder::class]);
+        $this->call([NovelaSeeder::class, EscenaSeeder::class]);
 
     }
 }

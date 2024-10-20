@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Historia;
+use App\Models\Novela;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +19,7 @@ class EscenaFactory extends Factory
     {
         return [
             'historia_id' => function () {
-                return Historia::all()->random()->id;
+                return Novela::all()->random()->id;
             },
             'imagen' => fake()->imageUrl(),
             'coordenadas' => json_encode([fake()->randomDigit(), fake()->randomDigit()])

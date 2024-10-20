@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Historia;
+use App\Models\Novela;
 use Inertia\Response;
 
-class HistoriaController extends Controller
+class NovelaController extends Controller
 {
 	public function show(): Response
 	{
-		$novelas = Historia::all();
+		$novelas = Novela::all();
 		return inertia('Inicio', ['novelas' => $novelas]);
 	}
 }

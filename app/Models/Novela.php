@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Historia extends Model
+class Novela extends Model
 {
 
     use HasUlids, HasFactory;
