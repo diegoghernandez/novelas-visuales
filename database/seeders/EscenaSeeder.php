@@ -13,6 +13,6 @@ class EscenaSeeder extends Seeder
      */
     public function run(): void
     {
-        Escena::factory(10)->create();
+        Escena::factory(20)->create();
     }
 }

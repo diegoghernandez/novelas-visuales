@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Escena extends Model
 {
-    /** @use HasFactory<\Database\Factories\EscenaFactory> */
-    use HasUuids, HasFactory;
+	/** @use HasFactory<\Database\Factories\EscenaFactory> */
+	use HasUuids, HasFactory;
 
-    protected $fillable = [
-        'historia_id',
-        'imagen',
-        'coordenadas'
-    ];
+	protected $fillable = [
+		'historia_id',
+		'imagen',
+		'coordenadas'
+	];
 }
