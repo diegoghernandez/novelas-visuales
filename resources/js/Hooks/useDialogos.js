@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import dialogosJSON from "../assets/dialogos/dialogos.json";
+// import dialogosJSON from "../assets/dialogos/dialogos.json";
 
 /**
  * @typedef {{
@@ -23,14 +23,14 @@ export const useDialogo = create((set) => ({
 
 	agregarDialogosEscena: (dialogosEscena) => set(() => ({ dialogosEscena })),
 
-	asignarDialogo: (dialogoID) =>
+	/* asignarDialogo: (dialogoID) =>
 		set(() => {
 			const dialogosNuevos = dialogosJSON.filter(
 				({ id }) => id === dialogoID
 			)[0];
 
 			return { dialogos: dialogosNuevos };
-		}),
+		}), */
 
 	siguiente: () =>
 		set((state) => {
