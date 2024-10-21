@@ -1,15 +1,15 @@
-import js from "@eslint/js";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
 import globals from "globals";
+import pluginJs from "@eslint/js";
+import pluginReact from "eslint-plugin-react";
+import pluginReactHooks from "eslint-plugin-react-hooks";
+import pluginReactRefresh from "eslint-plugin-react-refresh";
 
+/** @type { import('eslint').Linter.Config[] } */
 export default [
-	{ ignores: ["dist"] },
+	{ files: ["./resources/js/**/*.{js,mjs,cjs,jsx}"] },
 	{
-		files: ["resources/js/**/*.{js,jsx}"],
 		languageOptions: {
-			ecmaVersion: 2020,
+			ecmaVersion: 2023,
 			globals: globals.browser,
 			parserOptions: {
 				ecmaVersion: "latest",
@@ -19,21 +19,14 @@ export default [
 		},
 		settings: { react: { version: "18.3" } },
 		plugins: {
-			react,
-			"react-hooks": reactHooks,
-			"react-refresh": reactRefresh,
+			"react-hooks": pluginReactHooks,
+			"react-refresh": pluginReactRefresh,
 		},
 		rules: {
-			...js.configs.recommended.rules,
-			...react.configs.recommended.rules,
-			...react.configs["jsx-runtime"].rules,
-			...reactHooks.configs.recommended.rules,
-			"react/jsx-no-target-blank": "off",
-			"react/prop-types": "off",
-			"react-refresh/only-export-components": [
-				"warn",
-				{ allowConstantExport: true },
-			],
+			...pluginReactHooks.configs.recommended.rules,
+			"react-refresh/only-export-components": "warn",
 		},
 	},
+	pluginJs.configs.recommended,
+	pluginReact.configs.flat.recommended,
 ];
