@@ -7,11 +7,11 @@ use Illuminate\Database\Seeder;
 
 class NovelaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        Novela::factory(10)->create();
-    }
+	/**
+	 * Run the database seeds.
+	 */
+	public function run(): void
+	{
+		Novela::factory(1)->create();
+	}
 }

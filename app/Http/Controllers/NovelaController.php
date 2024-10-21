@@ -16,11 +16,11 @@ class NovelaController extends Controller
 
 	public function show(Novela $novela)
 	{
-		$escenas = Escena::all()->where('historia_id', $novela->id);
+		$escenas = Escena::where('historia_id', $novela->id)->get();
 
 		return inertia('Novela', [
 			'titulo' => $novela->titulo,
-			'novela' => $escenas
+			'escenas' => $escenas
 		]);
 	}
 }

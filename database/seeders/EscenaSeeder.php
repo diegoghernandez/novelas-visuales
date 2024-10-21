@@ -8,11 +8,11 @@ use Illuminate\Database\Seeder;
 
 class EscenaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        Escena::factory(20)->create();
-    }
+	/**
+	 * Run the database seeds.
+	 */
+	public function run(): void
+	{
+		Escena::factory(10)->create();
+	}
 }
