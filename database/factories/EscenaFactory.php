@@ -22,7 +22,7 @@ class EscenaFactory extends Factory
 				return Novela::all()->random()->id;
 			},
 			'imagen' => fake()->imageUrl(),
-			'coordenadas' => json_encode([fake()->numberBetween(0, 2), fake()->numberBetween(0, 6)])
+			'coordenadas' => json_encode([fake()->numberBetween(0, 2), fake()->numberBetween(0, 2)])
 		];
 	}
 }

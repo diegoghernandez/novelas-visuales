@@ -1,4 +1,5 @@
 import { Navbar } from "@/Components/common/Navbar";
+import { AdministradorEscenas } from "@/Components/escena/AdministradorEscenas";
 import { Head } from "@inertiajs/react";
 
 /**
@@ -14,15 +15,13 @@ import { Head } from "@inertiajs/react";
  * @returns
  */
 export default function Novela({ auth, titulo, escenas }) {
-	console.log(escenas);
-
 	return (
 		<>
 			<Head title="Novelas" />
 			<Navbar user={auth.user} />
 			<main>
 				<h1>{titulo}</h1>
-				<p>{escenas.id}</p>
+				<AdministradorEscenas escenas={escenas} />
 			</main>
 		</>
 	);

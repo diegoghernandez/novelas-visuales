@@ -1,0 +1,51 @@
+@property --orientacion {
+   syntax: "<angle>";
+   inherits: false;
+}
+
+.selector-container {
+   position: absolute;
+   display: grid;
+   grid-template-areas:
+      "izquierda arriba derecha"
+      "izquierda abajo derecha";
+   inset: 0;
+   place-items: center;
+
+   & button {
+      --size: 64px;
+
+      display: grid;
+      place-items: center;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 100%;
+      opacity: 0.8;
+      background-color: grey;
+      rotate: var(--orientacion);
+
+      &:disabled {
+         display: none;
+      }
+   }
+
+   & [data-direccion="izquierda"] {
+      grid-area: izquierda;
+      --orientacion: 180deg;
+   }
+   
+   & [data-direccion="abajo"] {
+      grid-area: abajo;
+      --orientacion: 90deg;
+   }
+
+   & [data-direccion="arriba"] {
+      grid-area: arriba;
+      --orientacion: 270deg;
+   }
+
+   & [data-direccion="derecha"] {
+      grid-area: derecha;
+      --orientacion: 0deg;
+   }
+}
