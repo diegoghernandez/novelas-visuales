@@ -2,6 +2,17 @@ import { Navbar } from "@/Components/common/Navbar";
 import { ContenedorNovelas } from "@/Components/inicio/ContenedorNovelas";
 import { Head } from "@inertiajs/react";
 
+/**
+ * @typedef {{
+ * auth: Auth
+ * novelas: Novela[]
+ * }} Props
+ */
+
+/**
+ * @param {Props} props
+ * @returns
+ */
 export default function Inicio({ auth, novelas }) {
 	return (
 		<>

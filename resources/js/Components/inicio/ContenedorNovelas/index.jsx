@@ -2,6 +2,16 @@ import { Carta } from "@/Components/common/Carta";
 import Styles from "./ContenedorNovelas.module.css";
 import { Link } from "@inertiajs/react";
 
+/**
+ * @typedef {{
+ * novelas: Novela[]
+ * }} Props
+ */
+
+/**
+ * @param {Props} props
+ * @returns
+ */
 export function ContenedorNovelas({ novelas }) {
 	return (
 		<div className={Styles["historias-container"]}>

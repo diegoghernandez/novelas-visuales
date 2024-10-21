@@ -1,8 +1,20 @@
 import { Navbar } from "@/Components/common/Navbar";
 import { Head } from "@inertiajs/react";
 
-export default function Novela({ auth, titulo, novela }) {
-	console.log(novela);
+/**
+ * @typedef {{
+ * auth: Auth
+ * titulo: string
+ * escenas: Escena[]
+ * }} Props
+ */
+
+/**
+ * @param {Props} props
+ * @returns
+ */
+export default function Novela({ auth, titulo, escenas }) {
+	console.log(escenas);
 
 	return (
 		<>
@@ -10,7 +22,7 @@ export default function Novela({ auth, titulo, novela }) {
 			<Navbar user={auth.user} />
 			<main>
 				<h1>{titulo}</h1>
-				<p>{novela.id}</p>
+				<p>{escenas.id}</p>
 			</main>
 		</>
 	);
