@@ -23,7 +23,7 @@
  *
  * @typedef {{
  * id?: string
- * tipo: typeof import("./constants/TiposDialogo.js").TIPOS_DIALOGO
+ * tipo: typeof import("@/Constants/TiposDialogo.js").TIPOS_DIALOGO
  * dialogo: string
  * itemID: string | null
  * personaje: {
