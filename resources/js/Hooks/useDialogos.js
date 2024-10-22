@@ -1,12 +1,12 @@
+import axios from "axios";
 import { create } from "zustand";
-// import dialogosJSON from "../assets/dialogos/dialogos.json";
 
 /**
  * @typedef {{
- *	dialogos: ArbolDialogo
- * dialogosEscena: DialogoEscena[]
- * agregarDialogosEscena: (dialogosEscena: DialogoEscena) => void
- * asignarDialogo: (dialogoID: string) => void
+ *	dialogos: Dialogo
+ * dialogosEscena: EscenaDialogo[]
+ * agregarDialogosEscena: (dialogosEscena: EscenaDialogo[]) => void
+ * asignarDialogo: async (dialogoID: string) => void
  * siguiente: () => void
  * }} EstadoDialogo
  *
@@ -23,14 +23,27 @@ export const useDialogo = create((set) => ({
 
 	agregarDialogosEscena: (dialogosEscena) => set(() => ({ dialogosEscena })),
 
-	/* asignarDialogo: (dialogoID) =>
-		set(() => {
-			const dialogosNuevos = dialogosJSON.filter(
-				({ id }) => id === dialogoID
-			)[0];
+	asignarDialogo: async (dialogoID) => {
+		const { data } = await axios.get(
+			`http://127.0.0.1:8000/api/dialogo/${dialogoID}`
+		);
 
-			return { dialogos: dialogosNuevos };
-		}), */
+		set(() => {
+			const dialogosCompletados = localStorage.getItem("dialogos")
+				? JSON.parse(localStorage.getItem("dialogos"))
+				: [];
+
+			if (dialogosCompletados.includes(dialogoID)) {
+				return { dialogos: null };
+			}
+
+			localStorage.setItem(
+				"dialogos",
+				JSON.stringify(dialogosCompletados.concat(dialogoID))
+			);
+			return { dialogos: data };
+		});
+	},
 
 	siguiente: () =>
 		set((state) => {

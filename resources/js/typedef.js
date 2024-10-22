@@ -8,29 +8,27 @@
  *
  * @typedef {{
  * dialogoID: string
- * condiciones: {
- *    dialogosID: string[]
- *    itemsID: string | null
- * }
- * }} DialogoEscena
+ * dialogo_id: string[]
+ * item_id: string | null
+ * }} EscenaDialogo
  *
  * @typedef {{
  * id: string
  * imagen: string
  * coordenadas: number[]
- * dialogos: DialogoEscena[]
+ * escena_dialogo: EscenaDialogo[]
  * }} Escena
  *
  * @typedef {{
- * id?: string
  * tipo: typeof import("@/Constants/TiposDialogo.js").TIPOS_DIALOGO
  * dialogo: string
  * itemID: string | null
- * personaje: {
- *    nombre: string
- *    imagen: string
- * } | null
- * children: ArbolDialogo[] | null
+ * children: Dialogo[] | null
+ * }} Dialogo
+ *
+ * @typedef {{
+ * id: string
+ * arbol: Dialogo
  * }} ArbolDialogo
  *
  * @typedef {{

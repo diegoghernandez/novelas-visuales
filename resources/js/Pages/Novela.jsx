@@ -1,6 +1,8 @@
 import { Navbar } from "@/Components/common/Navbar";
+import { AdministradorDialogo } from "@/Components/dialogos/AdministradorDialogo";
 import { AdministradorEscenas } from "@/Components/escena/AdministradorEscenas";
 import { Head } from "@inertiajs/react";
+import { useEffect } from "react";
 
 /**
  * @typedef {{
@@ -15,6 +17,8 @@ import { Head } from "@inertiajs/react";
  * @returns
  */
 export default function Novela({ auth, titulo, escenas }) {
+	useEffect(() => localStorage.removeItem("dialogos"), []);
+
 	return (
 		<>
 			<Head title="Novelas" />
@@ -22,6 +26,7 @@ export default function Novela({ auth, titulo, escenas }) {
 			<main>
 				<h1>{titulo}</h1>
 				<AdministradorEscenas escenas={escenas} />
+				<AdministradorDialogo />
 			</main>
 		</>
 	);

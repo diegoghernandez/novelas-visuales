@@ -1,7 +1,7 @@
 import { ImagenEscena } from "@/Components/escena/ImagenEscena";
 import { SelectorEscenas } from "@/Components/escena/SelectorEscenas";
 import { useDialogo } from "@/Hooks/useDialogos.js";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 /**
  * @typedef {{
@@ -32,18 +32,16 @@ export function AdministradorEscenas({ escenas }) {
 		};
 	}, [coordenadas]);
 
-	/* useEffect(() => {
-		agregarDialogosEscena(escenaActual.dialogos);
-		const dialogo = escenaActual.dialogos.filter(
-			(elemento) =>
-				elemento.condiciones.dialogosID.length === 0 &&
-				!elemento.condiciones.itemsID
+	useEffect(() => {
+		agregarDialogosEscena(escenaActual["escena_dialogo"]);
+		const dialogo = escenaActual["escena_dialogo"].filter(
+			(elemento) => !elemento["item_id"]
 		);
 
 		if (dialogo.length !== 0) {
-			asignarDialogo(dialogo[0].dialogoID);
+			asignarDialogo(dialogo[0]["dialogo_id"]);
 		}
-	}, [escenas]); */
+	}, [escenaActual]);
 
 	return (
 		<>

@@ -1,0 +1,23 @@
+.caja-contenedor {
+   position: absolute;
+   bottom: 32px;
+   padding: 16px;
+   z-index: 1;
+}
+
+.caja-dialogo {
+   position: relative;
+   display: grid;
+   gap: 16px;
+   width: 100%;
+   max-width: 75ch;
+   padding-block: 8px;
+   padding-inline: 16px;
+   border-radius: 12px;
+   background-color: black;
+
+   & button {
+      position: absolute;
+      inset: 0;
+   }
+}
