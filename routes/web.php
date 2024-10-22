@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DialogoController;
 use App\Http\Controllers\NovelaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -11,6 +12,8 @@ Route::controller(NovelaController::class)->group(function () {
 	Route::get('/', 'index');
 	Route::get('/novelas/{novela}', 'show');
 });
+
+Route::get('/api/dialogo/{id}', [DialogoController::class, 'getDialogo']);
 
 Route::get('/dashboard', function () {
 	return Inertia::render('Dashboard');

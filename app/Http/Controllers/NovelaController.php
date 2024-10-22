@@ -16,7 +16,7 @@ class NovelaController extends Controller
 
 	public function show(Novela $novela)
 	{
-		$escenas = Escena::where('historia_id', $novela->id)->get();
+		$escenas = Escena::with('escenaDialogo')->where('historia_id', $novela->id)->get();
 
 		return inertia('Novela', [
 			'titulo' => $novela->titulo,

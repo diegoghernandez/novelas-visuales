@@ -21,7 +21,7 @@ class EscenaFactory extends Factory
 			'historia_id' => function () {
 				return Novela::all()->random()->id;
 			},
-			'imagen' => fake()->imageUrl(),
+			'imagen' => 'cld-sample-2',
 			'coordenadas' => json_encode([fake()->numberBetween(0, 2), fake()->numberBetween(0, 2)])
 		];
 	}

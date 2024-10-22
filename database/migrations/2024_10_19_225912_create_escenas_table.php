@@ -6,25 +6,26 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('escenas', function (Blueprint $table) {
-            $table->uuid('id');
-            $table->ulid('historia_id');
-            $table->string('imagen');
-            $table->jsonb('coordenadas');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 */
+	public function up(): void
+	{
+		Schema::create('escenas', function (Blueprint $table) {
+			$table->uuid('id');
+			$table->primary('id');
+			$table->string('imagen');
+			$table->jsonb('coordenadas');
+			$table->timestamps();
+			$table->ulid('historia_id');
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('escenas');
-    }
+	/**
+	 * Reverse the migrations.
+	 */
+	public function down(): void
+	{
+		Schema::dropIfExists('escenas');
+	}
 };

@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
 			'password' => '1234'
 		]);
 
-		$this->call([NovelaSeeder::class, EscenaSeeder::class]);
+		$this->call([NovelaSeeder::class, EscenaSeeder::class, DialogoSeeder::class]);
 
 		Escena::factory()->create([
 			'historia_id' => function () {

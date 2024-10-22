@@ -11,9 +11,11 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-		Schema::create('dialogos', function (Blueprint $table) {
+		Schema::create('escena_dialogos', function (Blueprint $table) {
 			$table->uuid('id');
-			$table->jsonb('arbol');
+			$table->uuid('dialogo_id');
+			// $table->uuid('item_id');
+			$table->foreignUuid('escena_id')->constrained('escenas')->onUpdate('cascade')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}
@@ -23,6 +25,6 @@ return new class extends Migration
 	 */
 	public function down(): void
 	{
-		Schema::dropIfExists('dialogos');
+		Schema::dropIfExists('escena_dialogos');
 	}
 };
