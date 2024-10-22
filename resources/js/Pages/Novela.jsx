@@ -1,6 +1,7 @@
 import { Navbar } from "@/Components/common/Navbar";
 import { AdministradorDialogo } from "@/Components/dialogos/AdministradorDialogo";
 import { AdministradorEscenas } from "@/Components/escena/AdministradorEscenas";
+import { AdministradorItems } from "@/Components/items/AdministradorItems";
 import { Head } from "@inertiajs/react";
 import { useEffect } from "react";
 
@@ -27,6 +28,7 @@ export default function Novela({ auth, titulo, escenas }) {
 				<h1>{titulo}</h1>
 				<AdministradorEscenas escenas={escenas} />
 				<AdministradorDialogo />
+				<AdministradorItems />
 			</main>
 		</>
 	);

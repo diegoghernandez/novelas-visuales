@@ -1,0 +1,65 @@
+.button-menu { 
+   position: absolute;
+   bottom: 24px;
+   left: 24px;
+   z-index: 0;
+
+   &:disabled {
+      cursor: not-allowed;
+   }
+
+   &:has(+ .dialogo-menu[open]) > svg {
+      fill: none;
+   }
+}
+
+.dialogo-menu[open] {
+   display: grid;
+   grid-template-areas: 
+   "aside aside aside"
+   "atras items siguiente";
+   place-content: center;
+   row-gap: 120px;
+   column-gap: 64px;
+   width: 100%;
+   max-width: 100svw;
+   height: 100%;
+   max-height: 100svh;
+   padding-inline: 24px;
+   border: none;
+   opacity: 0.9;
+
+   & aside {
+      grid-area: aside;
+      display: flex;
+      place-content: center;
+   }
+
+   & [data-accion="atras"] {
+      grid-area: atras;
+      rotate: 180deg;
+   }
+
+   & [data-accion="siguiente"] {
+      grid-area: siguiente;
+   }
+
+   & [data-accion="cerrar-dialogo"] {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+   }
+
+   & div {
+      width: 100%;
+      max-width: 320px;
+      overflow: hidden;
+
+      & ul {
+         display: flex;
+         gap: 120px;
+         list-style: none;
+      }
+   }
+
+}

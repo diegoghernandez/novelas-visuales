@@ -7,7 +7,6 @@
  * }} Novela
  *
  * @typedef {{
- * dialogoID: string
  * dialogo_id: string[]
  * item_id: string | null
  * }} EscenaDialogo
