@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Escena;
 use App\Models\EscenaDialogos;
+use App\Models\Item;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +21,12 @@ class DialogoFactory extends Factory
 		$arbol = [
 			"tipo" => "DIALOGO",
 			"dialogo" => "Mi esposo me asesinó para ocultar sus crímenes. Revela la verdad al mundo o únete a mí en la eternidad.",
-			"children" => ["tipo" => "DIALOGO", "dialogo" => "He reunido todas las pruebas. El mundo sabrá la verdad sobre los Blackwood.", "itemID" => "a532f007", "children" => null]
+			"children" => [
+				"tipo" => "DIALOGO",
+				"dialogo" => "He reunido todas las pruebas. El mundo sabrá la verdad sobre los Blackwood.",
+				"item_id" => Item::all()->random()->id,
+				"children" => null
+			]
 		];
 
 		return [

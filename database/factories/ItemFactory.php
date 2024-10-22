@@ -9,16 +9,16 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ItemFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-            'nombre' => fake()->name(),
-            'ímagen' => fake()->imageUrl()
-        ];
-    }
+	/**
+	 * Define the model's default state.
+	 *
+	 * @return array<string, mixed>
+	 */
+	public function definition(): array
+	{
+		return [
+			'nombre' => fake()->name(),
+			'imagen' => 'cld-sample-2'
+		];
+	}
 }

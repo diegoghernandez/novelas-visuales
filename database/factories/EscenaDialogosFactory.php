@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Item;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,9 @@ class EscenaDialogosFactory extends Factory
 	{
 		return [
 			'dialogo_id' => fake()->uuid(),
-			// 'item_id' => fake()->uuid()
+			'item_id' => function () {
+				return fake()->boolean(50) ? Item::all()->random()->id : null;
+			},
 		];
 	}
 }

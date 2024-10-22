@@ -14,7 +14,7 @@ return new class extends Migration
 		Schema::create('escena_dialogos', function (Blueprint $table) {
 			$table->uuid('id');
 			$table->uuid('dialogo_id');
-			// $table->uuid('item_id');
+			$table->uuid('item_id')->nullable();
 			$table->foreignUuid('escena_id')->constrained('escenas')->onUpdate('cascade')->onDelete('cascade');
 			$table->timestamps();
 		});

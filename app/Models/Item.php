@@ -8,12 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    use HasUuids, HasFactory;
+	use HasUuids, HasFactory;
 
-    public $incrementing = false;
-
-    protected $fillable = [
-        'nombre',
-        'imagen'
-    ];
+	public $incrementing = false;
 }

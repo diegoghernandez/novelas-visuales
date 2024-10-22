@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\DialogoController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\NovelaController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -14,6 +14,7 @@ Route::controller(NovelaController::class)->group(function () {
 });
 
 Route::get('/api/dialogo/{id}', [DialogoController::class, 'getDialogo']);
+Route::get('/api/items/{id}', [ItemController::class, 'getItem']);
 
 Route::get('/dashboard', function () {
 	return Inertia::render('Dashboard');
