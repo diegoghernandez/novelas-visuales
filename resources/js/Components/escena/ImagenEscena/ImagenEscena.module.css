@@ -1,0 +1,12 @@
+.escena-imagen {
+	position: absolute;
+	display: grid;
+	place-content: center;
+	inset: 0;
+	height: 100%;
+	max-height: 100svh;
+
+	& img {
+		max-height: 100svh;
+	}
+}

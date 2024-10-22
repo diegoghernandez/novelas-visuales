@@ -5,6 +5,7 @@ import { create } from "zustand";
  * items: Item[],
  * agregarItem: (item: Item) => void
  * removerItem: (itemID: string) => void,
+ * removerLosItems: () => void,
  * }} EstadoItem
  *
  * @typedef {import('zustand').UseBoundStore<import('zustand').StoreApi<EstadoItem>>} BoundItem
@@ -23,4 +24,6 @@ export const useItems = create((set) => ({
 		set(({ items }) => ({
 			items: items.filter((item) => item.id !== itemID),
 		})),
+
+	removerLosItems: () => set(() => ({ items: [] })),
 }));
