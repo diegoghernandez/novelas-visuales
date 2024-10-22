@@ -1,4 +1,4 @@
-import axios from "axios";
+import { obtenerDialogo } from "@/Services/dialogos";
 import { create } from "zustand";
 
 /**
@@ -24,9 +24,7 @@ export const useDialogo = create((set) => ({
 	agregarDialogosEscena: (dialogosEscena) => set(() => ({ dialogosEscena })),
 
 	asignarDialogo: async (dialogoID) => {
-		const { data } = await axios.get(
-			`http://127.0.0.1:8000/api/dialogo/${dialogoID}`
-		);
+		const data = await obtenerDialogo({ id: dialogoID });
 
 		set(() => {
 			const dialogosCompletados = localStorage.getItem("dialogos")
