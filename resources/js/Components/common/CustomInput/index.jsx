@@ -19,7 +19,6 @@ import UserInputStyles from "../../../../css/UserInput.module.css";
  */
 export function CustomInput({
 	label,
-	name,
 	placeholder = "",
 	defaultValue = "",
 	minValue,
@@ -42,7 +41,7 @@ export function CustomInput({
 			) : null}
 			<input
 				id={customInputId}
-				name={name}
+				name={label.toLowerCase().replace(" ", "-")}
 				type={type}
 				required={required}
 				defaultValue={defaultValue}

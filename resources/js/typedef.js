@@ -21,7 +21,7 @@
  * @typedef {{
  * tipo: typeof import("@/Constants/TiposDialogo.js").TIPOS_DIALOGO
  * dialogo: string
- * itemID: string | null
+ * item_id: string | null
  * children: Dialogo[] | null
  * }} Dialogo
  *

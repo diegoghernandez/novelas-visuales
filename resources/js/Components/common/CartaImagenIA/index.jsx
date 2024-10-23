@@ -9,7 +9,18 @@ import { useState } from "react";
 import "two-up-element";
 import Styles from "./CartaImagenIA.module.css";
 
-export function CartaImagenIA({ children }) {
+/**
+ * @typedef {{
+ * obtenerImagen: (url: string) => void
+ * children: import("react").ReactElement
+ * }}
+ */
+
+/**
+ * @param {Props} props
+ * @returns
+ */
+export function CartaImagenIA({ obtenerImagen, children }) {
 	const { data, setData } = useForm({
 		clima: "",
 		criaturas: "",
@@ -37,6 +48,7 @@ export function CartaImagenIA({ children }) {
 			.effect(generativeBackgroundReplace().prompt(prompt));
 
 		setEstaCargando(true);
+		obtenerImagen(preImagenIA.toURL());
 		setImagenIA(preImagenIA.toURL());
 	};
 
