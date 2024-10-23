@@ -1,7 +1,17 @@
 import { useEffect, useRef } from "react";
 import Styles from "./CloudinaryWidget.module.css";
 
-export function CloudinaryWidget() {
+/**
+ * @typedef {{
+ * setImageCloudinary?: (value: any) => void
+ * }} Props
+ */
+
+/**
+ * @param {Props} props
+ * @returns
+ */
+export function CloudinaryWidget({ setImageCloudinary }) {
 	const widgetRef = useRef();
 
 	useEffect(() => {
@@ -15,10 +25,11 @@ export function CloudinaryWidget() {
 			(error, result) => {
 				if (!error && result && result.event === "success") {
 					console.log(result.info);
+					setImageCloudinary(result.info.secure_url);
 				}
 			}
 		);
-	}, []);
+	}, [setImageCloudinary]);
 
 	return (
 		<button
