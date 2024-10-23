@@ -48,4 +48,13 @@
  * @typedef {{
  * user: User | null
  * }} Auth
+ *
+ * @typedef {{
+ * label: string
+ * name: string
+ * description?: string
+ * required?: boolean
+ * error?: string
+ * disable?: boolean
+ * }} UserInputProps
  */
