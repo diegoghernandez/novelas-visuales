@@ -15,6 +15,8 @@ import { create } from "zustand";
  * agregarEscena: (escena: Escena) => void
  * dialogos: Dialogo[],
  * agregarDialogo: (dialogo: Dialogo) => void
+ * items: Item[],
+ * agregarItem: (dialogo: Item) => void
  * }} EstadoItem
  *
  * @typedef {import('zustand').UseBoundStore<import('zustand').StoreApi<EstadoItem>>} BoundItem
@@ -48,6 +50,16 @@ export const useCrear = create((set) => ({
 
 			return {
 				dialogos: [...restDialogos, dialogo],
+			};
+		}),
+
+	items: [],
+	agregarItem: (item) =>
+		set((prev) => {
+			const restItems = prev.escenas.filter((rest) => rest.id !== item.id);
+
+			return {
+				dialogos: [...restItems, item],
 			};
 		}),
 }));
