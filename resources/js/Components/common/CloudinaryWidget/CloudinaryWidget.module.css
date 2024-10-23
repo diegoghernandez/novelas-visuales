@@ -1,0 +1,11 @@
+.cloudinary-widget {
+	width: 100%;
+   height: 36px;
+   border: none;
+   border-radius: 8px;
+   font-size: 1rem;
+   font-weight: 640;
+   line-height: 1.5rem;
+   background-color: purple;
+   transition: box-shadow 300ms ease-in-out;
+}
