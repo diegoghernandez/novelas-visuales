@@ -71,7 +71,7 @@ export function CartaImagenIA({ obtenerImagen, children }) {
 			</div>
 			{children}
 			<div>
-				<h2>Filtros</h2>
+				<h3>Filtros</h3>
 				<form onSubmit={crearNuevaImagen}>
 					<CustomSelect
 						label="Clima"

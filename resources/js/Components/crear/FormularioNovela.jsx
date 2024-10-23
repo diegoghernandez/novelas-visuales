@@ -27,14 +27,12 @@ export function FormularioNovela() {
 			<form onSubmit={onSubmit}>
 				<CustomInput
 					label="Título"
-					name="titulo"
 					required={true}
 					type="text"
 					onChange={(e) => setData("titulo", e.target.value)}
 				/>
 				<CustomInput
 					label="Descripción"
-					name="descripcion"
 					required={true}
 					type="text"
 					onChange={(e) => setData("descripcion", e.target.value)}
