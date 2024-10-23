@@ -17,6 +17,9 @@ importers:
       embla-carousel-react:
         specifier: 8.3.0
         version: 8.3.0(react@18.3.1)
+      ldrs:
+        specifier: 1.0.2
+        version: 1.0.2
       zustand:
         specifier: 5.0.0
         version: 5.0.0(react@18.3.1)
@@ -75,6 +78,9 @@ importers:
       tailwindcss:
         specifier: 3.4.14
         version: 3.4.14
+      two-up-element:
+        specifier: 1.0.1
+        version: 1.0.1
       vite:
         specifier: 5.4.9
         version: 5.4.9
@@ -1316,6 +1322,9 @@ packages:
     peerDependencies:
       vite: ^5.0.0
 
+  ldrs@1.0.2:
+    resolution: {integrity: sha512-sYJmivdkIiHrUEqTrEWccBoLdaENpzbzkABI5rk8rRxTXrg9i2xVuDvUUuhOhJY3RmQyaoxs046pM1DCRdcIpg==}
+
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -1499,6 +1508,9 @@ packages:
   pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
+
+  pointer-tracker@2.5.3:
+    resolution: {integrity: sha512-LiJUeIbzk4dXq678YeyrZ++mdY17q4n/2sBHfU9wIuvmSzdiPgMvmvWN2g8mY4J7YwYOIrqrZUWP/MfFHVwYtg==}
 
   possible-typed-array-names@1.0.0:
     resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
@@ -1768,6 +1780,9 @@ packages:
 
   tslib@2.8.0:
     resolution: {integrity: sha512-jWVzBLplnCmoaTr13V9dYbiQ99wvZRd0vNWaDRg+aVYRcjDF3nDksxFDE/+fkXnKhpnUUkmx5pK/v8mCtLVqZA==}
+
+  two-up-element@1.0.1:
+    resolution: {integrity: sha512-KjN4SBkOKeQ6LgZDOaxgnHyXV/VkmCXELeQSPs8GJUP8yFSqrH5pw9KxI/dny3pJdywe+ae+YiM4I/s91EGhOA==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -3261,6 +3276,8 @@ snapshots:
       vite: 5.4.9
       vite-plugin-full-reload: 1.2.0
 
+  ldrs@1.0.2: {}
+
   levn@0.4.1:
     dependencies:
       prelude-ls: 1.2.1
@@ -3416,6 +3433,8 @@ snapshots:
   pify@2.3.0: {}
 
   pirates@4.0.6: {}
+
+  pointer-tracker@2.5.3: {}
 
   possible-typed-array-names@1.0.0: {}
 
@@ -3750,6 +3769,10 @@ snapshots:
   ts-interface-checker@0.1.13: {}
 
   tslib@2.8.0: {}
+
+  two-up-element@1.0.1:
+    dependencies:
+      pointer-tracker: 2.5.3
 
   type-check@0.4.0:
     dependencies:
